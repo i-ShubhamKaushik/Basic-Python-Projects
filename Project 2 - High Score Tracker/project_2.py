@@ -8,7 +8,7 @@
 import random
 def game():
     print("You are now playing the game>>")
-    score = random.randint(1,101)
+    score = random.randint(1,100)
 
     with open("Project 2 - High Score Tracker/hi-score.txt", "r") as f:
         hiscore = f.read()
