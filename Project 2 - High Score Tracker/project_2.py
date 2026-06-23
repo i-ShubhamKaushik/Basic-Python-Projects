@@ -1,4 +1,4 @@
-# Project 2 - High Score Tracker
+# PROJECT 2 - High Score Tracker
 
 # The game() function in a program lets a user play a game and returns the score 
 # as an integer. You need to read a file ‘Hi-score.txt’ which is either blank or 
