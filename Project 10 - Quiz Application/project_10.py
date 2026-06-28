@@ -49,3 +49,26 @@ questions = [
 
 ]
 
+
+def quiz():
+    score = 0
+    random.shuffle(questions)
+
+    for question in questions:
+        print("\n")
+        print(question["question"])
+        print("\n")
+
+        for key, value in question["options"].items():
+            print(f"{key} : {value}")
+        answer = input("\nEnter your answer: ").lower()
+        
+        if answer == question["answer"]:
+            print("\nCorrect answer")
+            score+=1
+        else:
+            print("\nIncorrect answer")
+
+    print(f"\nFinal Score: {score}/{len(questions)}")
+
+quiz()
