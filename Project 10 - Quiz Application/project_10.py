@@ -73,7 +73,15 @@ def quiz():
             print("\nIncorrect answer")
 
     print(f"\nFinal Score: {score}/{len(questions)}\n")
+    
+    with open("Project 10 - Quiz Application/previous_score.txt", "w") as f:
+        f.write(f"Your previous score is : {score}/{len(questions)}")
 
+
+def previous_score():
+    with open("Project 10 - Quiz Application/previous_score.txt", "r") as f:
+        score=f.read()
+        print(f"\n{score}\n")
 
 # MENU SECTION
 
@@ -85,9 +93,9 @@ while True:
     elif user_input=="2":
         pass
     elif user_input=="3":
-        pass
+        previous_score()
     elif user_input=="4":
-        print(f"\nGood bye... {name}")
+        print(f"\nGood bye... {name}!\n")
         break
     else:
         print("\nInvalid Argument..!")
