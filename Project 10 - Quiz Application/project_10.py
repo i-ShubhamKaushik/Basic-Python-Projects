@@ -2,6 +2,9 @@
 
 import random
 
+name = input("\nEnter your name: ")
+print(f"\nWelcome, {name}!")
+
 questions = [
     {
         "question" : "Which keyword is used to define a function?",
@@ -49,8 +52,8 @@ questions = [
 
 ]
 
-
 def quiz():
+    print("----  Quiz Started  ----")
     score = 0
     random.shuffle(questions)
 
@@ -69,6 +72,22 @@ def quiz():
         else:
             print("\nIncorrect answer")
 
-    print(f"\nFinal Score: {score}/{len(questions)}")
+    print(f"\nFinal Score: {score}/{len(questions)}\n")
 
-quiz()
+
+# MENU SECTION
+
+while True:
+    user_input= input("\n     M E N U     \nPress '1' to start Quiz \nPress '2' to add question \nPress '3' to view score \nPress '4' to Exit \n\n:")
+
+    if user_input=="1":
+        quiz()
+    elif user_input=="2":
+        pass
+    elif user_input=="3":
+        pass
+    elif user_input=="4":
+        print(f"\nGood bye... {name}")
+        break
+    else:
+        print("\nInvalid Argument..!")
