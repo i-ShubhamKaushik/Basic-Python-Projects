@@ -83,19 +83,43 @@ def previous_score():
         score=f.read()
         print(f"\n{score}\n")
 
+def admin():
+    admin = input("\nEnter your admin code: ")
+    if admin == "admin@12":
+        print("\n\nStatus : You now have admin access...!")
+        while True:
+            admin_input= input("\n     M E N U     \nPress '1' to add Question \nPress '2' log out \n\n:")
+            if admin_input=="1":
+                new_question= input("\nInput new question: ")
+                option_a = input("\noption 'a' : ")
+                option_b = input("option 'b' : ")
+                option_c = input("option 'c' : ")
+                option_d = input("option 'd' : ")
+                answer = input("\nCorrect option: ").lower()
+                questions.append({"question" : new_question, "options" : {"a" : option_a, "b" : option_b, "c" : option_c, "d" : option_d}, "answer" : answer})
+                print("\nQuestion added successfully...!\n")
+            elif admin_input=="2":
+                print("\n\nStatus : Logged out as admin")
+                break
+            else:
+                print("\nChoice should be from MENU\n")
+    else:
+        print("\nIncorrect code\n")
+
+
 # MENU SECTION
 
 while True:
-    user_input= input("\n     M E N U     \nPress '1' to start Quiz \nPress '2' to add question \nPress '3' to view score \nPress '4' to Exit \n\n:")
+    user_input= input("\n     M E N U     \nPress '1' to start Quiz \nPress '2' to view score \nPress '3' to Exit \nPress '4' to login as Admin \n\n:")
 
     if user_input=="1":
         quiz()
     elif user_input=="2":
-        pass
-    elif user_input=="3":
         previous_score()
-    elif user_input=="4":
+    elif user_input=="3":
         print(f"\nGood bye... {name}!\n")
         break
+    elif user_input=="4":
+        admin()
     else:
         print("\nInvalid Argument..!")
