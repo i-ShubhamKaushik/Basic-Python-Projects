@@ -10,19 +10,20 @@ account = [
     }
 ]
 
+def get_input(field):
+    return input(f"\nEnter {field}: ")
 
-while True:
-    name = input("\nEnter name: ")
-    surname = input("\nEnter surname: ")
-    username = input("\nSet username: ")
-    dob = input("\nenter date of birth: ")
-    password = input("\nSet password: ")
+for info in account:
+    info["details"]["name"] = get_input("name")
+    info["details"]["surname"] = get_input("surname")
+    info["details"]["dob"] = get_input("dob")
+    info["username"] = get_input("username")
+    info["details"]["password"] = get_input("password")
 
-    for info in account:
-        info["details"]["name"] = name
-        info["details"]["surname"] = surname
-        info["details"]["dob"] = dob
-        info["username"] = username
-        info["details"]["password"] = password
-    break
 
+for user in account:
+    print("\n\n---- Account Info ----")
+    print(f"\nUsername : {user['username']}")
+    for key, value in user["details"].items():
+        print(f"\n{key} : {value}")
+    print("\n")
